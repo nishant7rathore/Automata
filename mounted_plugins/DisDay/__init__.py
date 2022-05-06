@@ -35,7 +35,7 @@ class DisDay(AutomataPlugin):
 
         #if it the argument is today, only returns an event happened today
         if today.upper() == TODAY:
-            url = 'https://api.hiztory.org/date/event/{0}/{1}/api.xml'.format(current_time.month,current_time.day)
+            url = 'https://api.hiztory.org/date/{0}/{1}/{2}/api.xml'.format(category[ind],current_time.month,current_time.day)
      
         r = requests.get(url)
         root = ET.fromstring(r.content)
